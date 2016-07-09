@@ -1,0 +1,5 @@
+
+/var/www/html/kinjo/protected/controllers/ProductsController.php:		$uploaddir =  '/var/www/html/kinjo/public/images/upload/products/';
+/var/www/html/kinjo/protected/controllers/ProductsController.php:			$myImage->save('/var/www/html/kinjo/public/images/upload/products/thumbnails/'.$rnd.'-'.basename($_FILES['picturess']['name']));
+
+

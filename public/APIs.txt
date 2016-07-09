@@ -1,0 +1,860 @@
+
+1 - Call Back
+
+http://kinjo-app.com/index.php/API/CallBack
+--------------------------------------------------------
+2 - Render Check Out Script 
+
+http://kinjo-app.com/index.php/API/CheckOutScript
+--------------------------------------------------------
+3 - Get Business Unit Types
+
+- Type : Get
+
+http://kinjo-app.com/index.php/API/GetTypes
+--------------------------------------------------------
+4 - Get All Stores
+
+- Type : Get
+
+- Parm : t       -> Business Unit Type 
+		 CustID  -> Customer ID
+		 Hash    -> Hash
+		 DevID   -> Device ID
+		 lang    -> Language ID
+		 Long    -> Business Unit Long
+		 Lat     -> Business Unit Lat
+		 Dist    -> Distance
+
+http://kinjo-app.com/index.php/API/GetAllStores
+--------------------------------------------------------
+5 - Get Business Unit Data
+
+- Type : Get
+
+- Parm : BuID    -> Business Unit ID
+		 CustID  -> Customer ID
+		 Hash    -> Hash
+		 DevID   -> Device ID
+		 lang    -> Language ID
+
+http://kinjo-app.com/index.php/API/GetBuData
+--------------------------------------------------------
+6 - Get Subcription
+
+- Type : Get
+
+- Parm : t       -> Business Unit Type 
+		 CustID  -> Customer ID
+		 Hash    -> Hash
+		 DevID   -> Device ID
+		 lang    -> Language ID
+
+http://kinjo-app.com/index.php/API/GetSubcription
+--------------------------------------------------------
+7 - Add Subcription
+
+- Type : POST
+
+- Parm : subcrip={
+			     "cid"   : "",  ---- Customer ID,
+			     "hash"  : "",  ---- Hash,
+			     "cs_id" : "",  ---- cat or catsub,
+			     "DevID" : "",  ---- Device ID}		
+
+http://kinjo-app.com/index.php/API/AddSubcription
+---------------------------------------------------------
+8 - Remove Subcription
+
+- Type : POST
+
+- Parm : subcrip={
+			     "cid"   :  "",  ---- Customer ID,
+			     "hash"  :  "",  ---- Hash,
+			     "cs_id" :  "",  ---- cat or catsub,
+			     "DevID" : "",   ---- Device ID}		
+
+http://kinjo-app.com/index.php/API/RemoveSubcription
+---------------------------------------------------------
+9 - Get Product Feeds
+
+- Type : GET
+
+- Parm : t       -> Business Unit Type 
+		 CustID  -> Customer ID
+		 Hash    -> Hash
+		 DevID   -> Device ID
+		 lang    -> Language ID 		
+
+http://kinjo-app.com/index.php/API/GetProductFeeds
+----------------------------------------------------------
+10 - Add Product Rating
+
+- Type : POST
+
+- Parm : rate={
+				"pid" : "11",  ------ Product ID
+				"cid" : "1",   ------ Customer ID
+				"rate": "4"	   ------ Rate
+				"DevID" : "",  ------ Device ID}
+
+http://kinjo-app.com/index.php/API/AddProdRating
+
+----------------------------------------------------------
+11 - Get Product Rating
+
+- Type : GET
+
+- Parm : ProID   -> Product ID
+		 CustID  -> Customer ID
+		 Hash    -> Hash
+		 DevID   -> Device ID
+		 lang    -> Language ID 	
+
+http://kinjo-app.com/index.php/API/GetProdRating
+----------------------------------------------------------
+12 - Add Bu Rating
+
+- Type : POST
+
+- Parm : rate={
+				"buid" : "11", ------ Business Unit ID
+				"cid" : "1",   ------ Customer ID
+				"rate": "4"	   ------ Rate
+				"DevID" : "",  ------ Device ID}
+
+http://kinjo.local/index.php/API/AddBuRating
+
+----------------------------------------------------------
+13 - 
+----------------------------------------------------------
+
+2 - Get All Near Stores
+
+- type : get
+
+- parm : $lat, $long 
+
+http://kinjo.local/index.php/API/GetAllNearStores
+
+--------------------------------------------------------
+
+3 - Get Store Details by ID
+
+- type : get
+
+- parm : $Bu_ID -> store id
+
+http://kinjo.local/index.php/API/GetStoreDetails
+
+--------------------------------------------------------
+
+4 - Get All Products by Store ID
+
+- type : get
+
+- parm : $store_ID -> store id
+
+http://kinjo.local/index.php/API/GetProductsByStoreId
+
+--------------------------------------------------------
+
+5 - Add To Order
+
+- type : post
+
+- parm : $OrdArr
+
+$OrdArr = '{
+			 "id": "10" ,                ---- order id 
+			 "cust_id": "1",             ---- customer id
+			 "AppSource": "0" ,          ---- application type (0 -> mobile app) 
+			 "p_id": "4" ,               ---- product id
+			 "qnt": "1" , 				 ---- quantity
+			 "bu_id": "1"				 ---- store id
+			 "curr":"EGP"				 ---- Currency
+		   }';
+
+http://kinjo.local/index.php/API/AddToOrder
+
+
+
+curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"id": "" ,"cust_id": "1","AppSource": "0","p_id": "4","qnt": "1","bu_id": "1"}'  http://192.168.1.2/kinjo/public/index.php/API/AddToOrder
+
+--------------------------------------------------------
+
+6 - Edit Order
+
+- type : post
+
+- parm : $OrdArr
+
+$OrdArr = '{
+				"id": "9",				---- order id 
+				"cust_id": "1",			---- customer id
+				"AppSource": "0",		---- application type (0 -> mobile app)
+				"c_id": "1",			---- detail id
+				"p_id": "1",			---- product id
+				"qnt": "10",			---- quantity
+				"bu_id": "1"			---- store id
+			 }';
+
+http://kinjo.local/index.php/API/EditOrder
+
+--------------------------------------------------------
+
+7 - Remove From Order
+
+- type : post
+
+- parm : $OrdArr
+
+$OrdArr = '{
+				"id": "10" ,			---- order id 
+				"c_id":"11"				---- detail id
+			}';
+
+http://kinjo.local/index.php/API/RemoveFromOrder
+
+--------------------------------------------------------
+
+8 - Close Order
+
+- type : post
+
+- parm : $OrdArr
+
+$OrdArr = '{"id": "8"}';				---- order id 
+
+http://kinjo.local/index.php/API/CloseOrder
+
+--------------------------------------------------------
+
+9 - View Orders
+
+- type : get
+
+- parm : $OrdArr
+
+$OrdArr = '{"cust_id": "1"}';			---- customer id	
+
+http://kinjo.local/index.php/API/ViewOrders
+
+--------------------------------------------------------
+
+10 - View Order By ID
+
+- type : get
+
+- parm : $OrdArr
+
+$OrdArr = '{"ord_id": "9"}';			---- order id	
+
+http://kinjo.local/index.php/API/ViewOrderByID
+
+--------------------------------------------------------
+
+11 - View Recent Offers
+
+- type : get
+
+http://kinjo.local/index.php/API/ViewRecentOffers
+
+--------------------------------------------------------
+
+12 - Get Subcription
+
+- type : get
+
+- parm : $cust_id			---- customer id	
+
+http://kinjo.local/index.php/API/GetSubcription
+
+--------------------------------------------------------
+
+12 - Add Subcription
+
+- type : post
+
+- parm : $Arr		
+
+$Arr = '{
+			"bu_id": "1",		---- store id
+			"cid": "1",			---- customer id
+			"cs_id": "17"		---- cat or catsub id
+		}';	
+
+http://kinjo.local/index.php/API/AddSubcription
+
+--------------------------------------------------------
+
+13 - Get Product Feeds
+
+- type : get
+
+- parm : $cust_id			---- customer id	 		
+
+http://kinjo.local/index.php/API/GetProductFeeds
+
+--------------------------------------------------------
+
+14 - Get All Stores All Products
+
+- type : get
+
+- parm : $JArr
+
+$JArr = '{ "limit_form": "0" ,	---- From
+		   "limit_to": "10"		---- to
+		 }';
+
+http://kinjo.local/index.php/API/AllStoresAllProds
+
+--------------------------------------------------------
+
+15 - Register Customer
+
+- type : post
+
+- parm : $CustArr
+
+	$CustArr = '{"fname":"shimaa",						//------first name
+				 "lname":"fawzy",						//------last name
+				 "email":"shimaafawzy@Gmail.com",		//------email
+				 "pass":"123",							//------password
+				 "gender":"0",							//------Gender
+				 "b_date":"1990-1-20",					//------birthdate
+				 "coun_id":"1",							//------country ID
+					}';
+
+http://kinjo.local/index.php/API/RegisterCustomer
+
+--------------------------------------------------------
+
+16 - Login Customer
+
+- type : post
+
+- parm : $CustArr
+
+	$CustArr = '{"email":"shimaamohamed@Gmail.com",			//------email
+				 "pass":"123",								//------password
+				 "reg_id":"4444444444",						//------Registeration ID
+				 "dev_id":"xgdfhdfhfgj"						//------Device ID
+				}';
+
+http://kinjo.local/index.php/API/LoginCustomer
+
+--------------------------------------------------------
+
+17 - Add Product Rating
+
+- type : post
+
+- parm : $RatArr
+
+	$RatArr ='{
+				"pid": "11",				//------ Product ID
+				"cid": "1",					//------ Customer ID
+				"rate": "4"					//------ Rate
+			  }';
+
+http://kinjo.local/index.php/API/AddProdRating
+
+--------------------------------------------------------
+
+18 - Get Product Rating
+
+- type : get
+
+- parm : $pro_id		//------ Product ID	
+
+http://kinjo.local/index.php/API/GetProdRating
+
+------------------------------------------------------------
+
+
+19 - View All Orders
+
+- type : get
+
+http://kinjo.local/index.php/API/ViewOrdersAll
+
+--------------------------------------------------------
+
+
+20 - Add Group
+
+- type : post
+
+- parm : $group
+
+$group ='{
+			"name": "group_1",     //-----Group Name
+			"cid": "1"			   //------Customer ID
+		}';
+
+http://kinjo.local/index.php/API/AddGroup
+
+--------------------------------------------------------
+
+21 - Add Customer To Group
+
+- type : post
+
+- parm : $Cust
+
+$Cust ='{
+			"cid": "1",					//------login Customer ID
+			"cust_id": "1",				//------add Customer ID
+			"group_id": "2"				//------Group ID
+		}';
+
+http://kinjo.local/index.php/API/AddCustToGroup
+
+--------------------------------------------------------
+
+22 - Search For Customer By Email
+
+- type : get
+
+- parm : $email
+
+$email ='{
+			"email": "ahmed@Gmail.com"   //---Email
+		}';
+
+http://kinjo.local/index.php/API/SearchCustByEmail
+
+--------------------------------------------------------
+
+23 - Search For Product
+
+- type : get
+
+- parm : $product
+
+$product ='{
+			"ProdName": "Product"				//---Product Name
+			"ProdDesc": "Product"				//---Product Description
+			"ProdPrice": "100"					//---Product Price
+			"ProdQrcode": "yityirtyioryi"		//---Product Qrcode
+			"ProdBarcode": "1001"				//---Product Barcode
+			"ProdRate": "5"						//---Product Rate
+			"BUName": "Business Name 1"			//---Store Name
+			"CatName": " cat_1"					//---Cat Name
+		   }';
+
+http://kinjo.local/index.php/API/SearchProduct
+
+--------------------------------------------------------
+
+24 - Search For Store
+
+- type : get
+
+- parm : $store
+
+$store ='{
+							
+		"BUName": "Business Name 1"			//----- Store Name
+		"BULoc": "{long:"",lat:""}"			//----- Location (Long , Lat)
+        "BUDesc": ""						//-----	Store Description
+        "BURate":"1"						//-----	Store Rate
+	   }';
+
+http://kinjo.local/index.php/API/SearchStore
+
+--------------------------------------------------------
+
+25 - Search For Cat And SubCat
+
+- type : get
+
+- parm : $cat
+
+$cat ='{				
+		"CatName": "cat"					//----- Cat Name
+		"CatDesc": ""						//----- Cat Description
+	   }';
+
+http://kinjo.local/index.php/API/SearchCatAndSub
+--------------------------------------------------------
+
+26 - Get All Stores (TOP Sellers)
+
+- type : get
+
+http://kinjo.local/index.php/API/GetAllStores/1
+
+--------------------------------------------------------
+
+27 - Send Notify
+
+- type : post
+
+- parm : $CustArr
+
+	$CustArr = '{
+				 "cust_id":"1",							//------Customer ID
+				 "reg_id":"fdgfdhdfy57658568",			//------Registeration ID
+				 "dev_id":"gfu35432jfu567568"			//------Device ID
+					}';
+
+http://kinjo.local/index.php/API/SendNotify
+
+--------------------------------------------------------
+
+28 - Near Offers
+
+- type : get
+
+http://kinjo.local/index.php/API/GetNearOffers?CustID=1&&lat=31.225933942095836&&long=29.91174476562503
+
+--------------------------------------------------------
+
+29 - Get Product Details By OfferID
+
+- type : get
+
+http://kinjo.local/index.php/API/GetProdDetailsByOfferID?OfID=1&&lang=1
+
+--------------------------------------------------------
+
+30 - Get Product Details By Product ID
+
+- type : get
+
+http://kinjo.local/index.php/API/GetProdDetailsByProdID?ProID=12&&lang=1
+
+--------------------------------------------------------
+
+31 - Auto Login Customer
+
+- type : post
+
+- parm : $CustArr
+
+	$customer = '{"cust_id":"1",			//------Customer ID
+				  "hash":"wrewtwetewtewt"	//------Hash
+				}';
+
+http://kinjo.local/index.php/API/AutoLoginCustomer
+
+--------------------------------------------------------
+32 - Logout Customer
+
+- type : post
+
+- parm : $CustArr
+
+	$customer = '{"cust_id":"1",			//------Customer ID
+				  "hash":"wrewtwetewtewt"	//------Hash
+				}';
+
+http://kinjo.local/index.php/API/LogoutCustomer
+
+--------------------------------------------------------
+33 - Reset Password 
+
+- type : post
+
+- parm : $CustArr
+
+	$customer = '{"email":"shimaamohamed@Gmail.com",			//------email
+				}';
+
+http://kinjo.local/index.php/API/ResetPasswordCustomer
+
+--------------------------------------------------------
+34 - Add To WishList
+
+- type : post
+
+- parm : wishlist
+
+	wishlist = '{
+				 "hash": "11111",					//----Customer Hash
+				 "cid": "1"							//----Customer ID
+				 "pid": "11"						//----Product ID
+				 "lang":"1"							//----Language ID
+				 }';
+
+http://kinjo.local/index.php/API/AddWishList
+
+--------------------------------------------------------
+35 - Remove From WishList
+
+- type : post
+
+- parm : wishlist
+
+	wishlist = '{
+				 "hash": "11111",					//----Customer Hash
+				 "cid": "1"							//----Customer ID
+				 "pid": "11"						//----Product ID
+				 "lang":"1"							//----Language ID
+				 }';
+
+http://kinjo.local/index.php/API/RemoveWishList
+
+--------------------------------------------------------
+36 - Get WishList
+
+- type : get
+
+http://kinjo.local/index.php/API/GetWishList?CustID=&&Hash=&&Lang
+
+--------------------------------------------------------
+37 - Search Stores BY Product ID, QrCode, BarCode
+
+- type : get
+
+http://kinjo.local/index.php/API/SearchProdByIdQrBar?Val=&&q=&&Long=&&Lat=&&Dist=
+
+--------------------------------------------------------
+
+38 - Add Bu Rating
+
+- type : post
+
+- parm : $RatArr
+
+	$RatArr ='{
+				"buid": "11",				//------ store ID
+				"cid": "1",					//------ Customer ID
+				"rate": "4"					//------ Rate
+				"lang":"1"					//----Language ID
+			  }';
+
+http://kinjo.local/index.php/API/AddBuRating
+
+--------------------------------------------------------
+
+39 - Get Bu Rating
+
+- type : get
+
+- parm : $buid		//------ store ID	
+
+http://kinjo.local/index.php/API/GetBuRating
+
+------------------------------------------------------------
+
+40 - Enable Customer Send Notify
+
+- type : post
+
+- parm : $RatArr
+
+	customer ='{
+				 "hash": "11111",			//----Customer Hash
+				 "cid": "1"					//----Customer ID
+				 "str":"00000"				//----String Setting
+			  }';
+			  
+		 "str":"0 ------ 	General Notification				------ 0
+		 		0 ------ 	Group Notification   				------ 1
+		 		0 ------ 	Near Offer Location Notification	------ 2
+		 		0 ------ 	Product Notification				------ 3
+		 		0 ------ 	Offer Notification					------ 4
+		 		"	  
+
+http://kinjo.local/index.php/API/EnableSendNotify
+
+--------------------------------------------------------
+
+41 - Get Opened Order ID
+
+- type : get
+
+http://kinjo.local/index.php/API/GetOpenedOrderID?$CustID=&&Hash=
+
+--------------------------------------------------------
+
+42 - Get Convert Currency
+
+- type : get	
+
+http://kinjo.local/index.php/API/GetConvertCurrency?Frm=&&To=&&Val=
+
+--------------------------------------------------------
+
+43 - Image Customer
+
+- type : get	
+
+CustID , Hash , image , imgname 
+
+http://kinjo.local/index.php/API/ImageCustomer
+
+--------------------------------------------------------
+
+44 - Update Customer
+
+- type : post	
+
+- parm : customer:{"fname":"shimaa",
+		 "lname":"fawzy",
+		 "pass":"123",
+		 "gender":"0",
+		 "b_date":"1990-1-20",
+		 "coun_id":"1"
+		 "cust_id": "1"
+		 }
+
+http://kinjo.local/index.php/API/UpdateCustomer
+
+--------------------------------------------------------
+
+45 - Get Customer
+
+- type : get	
+
+CustID , Hash
+
+http://kinjo.local/index.php/API/GetCustomer
+
+--------------------------------------------------------
+
+46 - Add Group Notify
+
+- type : post	
+
+notify ='{
+		 "pid": "1",
+		 "nmessage": "welcome",
+		 "group_id": "1",
+		 "has_offer": "0"
+		 }'
+
+http://kinjo.local/index.php/API/AddGroupNotify
+
+--------------------------------------------------------
+
+47 - List Customers Groups
+
+- type : get	
+
+CustID , Hash
+
+http://kinjo.local/index.php/API/ListCustsGroups
+
+--------------------------------------------------------
+
+48 - Block Group
+
+- type : post	
+
+ customer ='{
+		 "block": "all or custid",
+		 "cid": "1"
+		 }'
+
+http://kinjo.local/index.php/API/BlockGroup
+
+--------------------------------------------------------
+
+49 - UnBlock Group
+
+- type : post	
+
+ customer ='{
+		 "block": "all or custid",
+		 "cid": "1"
+		 }'
+
+http://kinjo.local/index.php/API/UNBlockGroup
+
+--------------------------------------------------------
+
+50 - Leave Group
+
+- type : post	
+
+ customer ='{
+		 "gr_id": "1",
+		 "cid": "1"
+		 }'
+
+http://kinjo.local/index.php/API/LeaveGroup
+
+--------------------------------------------------------
+
+
+
+
+------------------------------------  Reservations ---------------------------------------------------------------
+51 - Get Available Tables By certain time
+
+- type : post	
+
+ unit ='{
+		 "from":"2015-01-08 15:00:00",
+		 "to":"2015-01-08 19:30:00",
+		 "res_type":"TA",       ------> table(TA)    Rooms (RM)  etc....
+		 "buid":"3",
+ 		 "persons_no":"2"  ------> number of chairs (optional)
+		 }'
+http://192.168.1.4/kinjo/public/index.php/API/GetAvUnitsByD
+
+---------------------------------------------------------------
+
+52 - Reserve A table
+
+- type : post	
+
+ reserve ='{
+		"cid":"2",
+		"unitID":"201",                 ---------> table ID
+		"from":"2015-01-08 15:35:00",
+		"to":"2015-01-08 16:47:20",
+		"res_type":"TA"
+		 }'
+http://192.168.1.4/kinjo/public/index.php/API/Reserve
+
+---------------------------------------------------------------
+
+53 - Cancel a Reservation
+
+- type : post	
+
+ cancel ='{
+		"ReservationID":"20",
+		"CancelType":"cust",   ----> cust : with out fees
+		"cid":1"      ---------> customer ID
+		 }'
+http://192.168.1.4/kinjo/public/index.php/API/CancelReserve
+
+-----------------------------------------------------------------
+
+
+54 -Confirm a Reservation
+
+- type : post	
+
+ confirm ='{
+		"ReservationID":"19",
+		"cid":2   ---------> customer ID
+		 }'
+http://192.168.1.4/kinjo/public/index.php/API/ConfirmReserve
+
+
+-----------------------------------------------------------------
+
+55 -Get all available reservations for a Customer
+
+- type : post	
+
+ cust ='{
+		"res_type":"TA",
+		"cid":2   ---------> customer ID
+		 }'
+http://192.168.1.4/kinjo/public/index.php/API/GetCustRese
+
+
+
+
+
+
+

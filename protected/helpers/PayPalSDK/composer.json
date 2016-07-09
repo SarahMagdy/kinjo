@@ -1,0 +1,6 @@
+{
+    "require": {
+        "paypal/merchant-sdk-php": "v3.8.107",
+        "paypal/rest-api-sdk-php": "*"
+    }
+}

@@ -1,0 +1,46 @@
+<?php
+	
+	return array (
+		
+		'TopMenuHome'=>'家',
+		'TopMenuUserProfile'=>'轮廓',
+		'TopMenuMyAccount'=>'帐户',
+		'TopMenuCpanel'=>'面板',
+		'TopMenuBusinessUnit'=>'业务部门',
+		'TopMenuBills'=>'票据',
+		'TopMenuCreditCards'=>'信用卡',
+		
+		'BuMenuCatsub'=>'子类别',
+		'BuMenuCustomers'=>'客户',
+		'BuMenuMessages'=>'信息',
+		'BuMenuOffers'=>'报价',
+		'BuMenuOrdersDetails'=>'订单',
+		'BuMenuPdConfig'=>'Products Configuration',
+		'BuMenuProducts'=>'产品配置',
+		'BuMenuSetting'=>'设置',
+		'BuMenuBusinessUnit'=>'表',
+		'BuMenuCpanel'=>'面板',
+                'ExtMenuChangepassword'=>'更改密码',
+                'ExtMenuForgetpassword'=>'忘记密码',
+    	
+    	'ExtMenuCreate'=>'创建',
+		'ExtMenuUpdate'=>'更新',
+		'ExtMenuView'=>'视图',
+		'ExtMenuIndex'=>'指数',
+		'ExtMenuAdmin'=>'管理员',
+		'ExtMenuAssignTables'=>'分配',
+		'ExtMenuTotalTables'=>'总',
+		'ExtMenuGetAvUnitsByD'=>'报告', 
+		'ExtMenuAdvanced'=>'先进',
+		'ExtMenuColor'=>'颜色',
+		'ExtMenuOpenNotify'=>'开通知',
+		'ExtMenuContactUS'=>'联系我们',
+		'ExtMenuSendNotify'=>'发送通知',
+		'ExtMenuCustomGrid'=>'自定义网格',
+		'ExtMenuCustomView'=>'自定义视图',
+		'ExtMenuCloseOrder'=>'亲密',
+		'ExtMenuOPenSettingLang'=>'打开语言设置',
+		'ExtMenuBUsetting'=>'业务部门设置',
+		'View BuMenuBuAccounts'=>'企业账户',
+	);
+?>

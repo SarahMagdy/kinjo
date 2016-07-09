@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: my-project.lt 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-29 17:57+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: shimaa <shimaa.mohamed.cs@gmail.com>\n"
+"Language-Team: Translators without borders <translators@example.com>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _ngettext:1,2;t:1c,2\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: ../..\n"
+
+#: ../../views/buAccounts/_form.php:20
+msgctxt "app"
+msgid "Login"
+msgstr "ggggg"
+
+#: ../../extensions/colorpicker/EColorPicker.php:167
+msgctxt "EColorPicker"
+msgid "Invalid mode."
+msgstr ""
+
+#: ../../extensions/colorpicker/EColorPicker.php:188
+msgctxt "EColorPicker"
+msgid "Invalid color."
+msgstr ""
+
+#: ../../extensions/colorpicker/EColorPicker.php:209
+#: ../../extensions/colorpicker/EColorPicker.php:225
+#: ../../extensions/colorpicker/EColorPicker.php:237
+#: ../../extensions/colorpicker/EColorPicker.php:249
+#: ../../extensions/colorpicker/EColorPicker.php:261
+#: ../../extensions/colorpicker/EColorPicker.php:273
+#: ../../extensions/colorpicker/EColorPicker.php:285
+msgctxt "EColorPicker"
+msgid "Invalid value."
+msgstr ""
+
+#: ../../extensions/colorpicker/EColorPicker.php:418
+msgctxt "EColorPicker"
+msgid "A selector must be specified."
+msgstr ""

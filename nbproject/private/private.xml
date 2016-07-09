@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/var/www/html/kinjo/protected/controllers/BusinessUnitController.php</file>
+            <file>file:/var/www/html/kinjo/protected/views/products/advanced.php</file>
+            <file>file:/var/www/html/kinjo/protected/controllers/ProductsController.php</file>
+            <file>file:/var/www/html/kinjo/protected/controllers/APIController.php</file>
+            <file>file:/var/www/html/kinjo/protected/controllers/UsersController.php</file>
+            <file>file:/var/www/html/kinjo/protected/views/customers/AssignRooms.php</file>
+            <file>file:/var/www/html/kinjo/protected/controllers/CustomersController.php</file>
+            <file>file:/var/www/html/kinjo/protected/views/customers/_form.php</file>
+            <file>file:/var/www/html/kinjo/protected/views/products/_form.php</file>
+            <file>file:/var/www/html/kinjo/framework/web/widgets/CActiveForm.php</file>
+            <file>file:/var/www/html/kinjo/protected/lib/CustLib.php</file>
+        </group>
+    </open-files>
+</project-private>

@@ -1,0 +1,46 @@
+<?php
+	
+	return array (
+		
+		'TopMenuHome'=>'Home',
+		'TopMenuUserProfile'=>'User Profile',
+		'TopMenuMyAccount'=>'My Account',
+		'TopMenuCpanel'=>'Cpanel',
+		'TopMenuBusinessUnit'=>'BusinessUnit',
+		'TopMenuBills'=>'Bills',
+		'TopMenuCreditCards'=>'Credit Cards',
+		
+		'BuMenuCatsub'=>'Catsub',
+		'BuMenuCustomers'=>'Customers',
+		'BuMenuMessages'=>'Messages',
+		'BuMenuOffers'=>'Offers',
+		'BuMenuOrdersDetails'=>'Orders',
+		'BuMenuPdConfig'=>'Products Configuration',
+		'BuMenuProducts'=>'Products',
+		'BuMenuSetting'=>'Setting',
+		'BuMenuBusinessUnit'=>'Tables',
+		'BuMenuCpanel'=>'Cpanel',
+                'ExtMenuChangepassword'=>'change password',
+                'ExtMenuForgetpassword'=>'forget password',
+    	
+    	'ExtMenuCreate'=>'Create',
+		'ExtMenuUpdate'=>'Update',
+		'ExtMenuView'=>'View',
+		'ExtMenuIndex'=>'Index',
+		'ExtMenuAdmin'=>'Admin',
+		'ExtMenuAssignTables'=>'Assign',
+		'ExtMenuTotalTables'=>'Total',
+		'ExtMenuGetAvUnitsByD'=>'Report', 
+		'ExtMenuAdvanced'=>'Advanced',
+		'ExtMenuColor'=>'Color',
+		'ExtMenuOpenNotify'=>'Open Notify',
+		'ExtMenuContactUS'=>'Contact US',
+		'ExtMenuSendNotify'=>'Send Notify',
+		'ExtMenuCustomGrid'=>'Custom Grid',
+		'ExtMenuCustomView'=>'Custom View',
+		'ExtMenuCloseOrder'=>'Close',
+		'ExtMenuOPenSettingLang'=>'OPenSettingLang',
+		'ExtMenuBUsetting'=>'BUsetting',
+		'View BuMenuBuAccounts'=>'bussiness account',
+	);
+?>
